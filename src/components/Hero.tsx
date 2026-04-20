@@ -16,12 +16,16 @@ export function Hero() {
 
   return (
     <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
-      {/* gradient wash */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[color:var(--color-accent)]/10" />
+      {/* 🔵 STRONGER GRADIENT BACKGROUND */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[#2f5d8c]/20" />
 
-      {/* accent glow */}
-      <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] bg-[color:var(--color-accent)] opacity-10 blur-3xl rounded-full" />
+      {/* 🔵 ACCENT GLOW */}
+      <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#2f5d8c]/30 blur-3xl rounded-full" />
 
+      {/* 🔥 BIG BACKGROUND LOGO */}
+      <h1 className="absolute text-[18vw] font-bold text-[#2f5d8c]/10 select-none pointer-events-none">
+        TENORQ
+      </h1>
       <div
         style={{ opacity, transform: `scale(${scale})` }}
         className="transition-transform"
