@@ -10,40 +10,67 @@ export function Hero() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // fade + slight scale
-  const opacity = Math.max(1 - scrollY / 400, 0);
-  const scale = 1 - scrollY / 2000;
+  const opacity = Math.max(1 - scrollY / 500, 0);
+  const scale = 1 - scrollY / 3000;
+  const translateY = scrollY * 0.2;
 
   return (
-    <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
-      {/* 🔵 STRONGER GRADIENT BACKGROUND */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-white to-[#2f5d8c]/20" />
+    <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden px-6">
+      {/* Dynamic Background Effects */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#2f5d8c]/20 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#2f5d8c]/15 blur-[100px] rounded-full" />
+      </div>
 
-      {/* 🔵 ACCENT GLOW */}
-      <div className="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-[#2f5d8c]/30 blur-3xl rounded-full" />
+      {/* Large Background Logo with Parallax */}
+      <div 
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden"
+        style={{ transform: `translateY(${translateY}px)` }}
+      >
+        <h1 className="text-[25vw] font-black text-white/[0.02] tracking-tighter leading-none select-none">
+          TENORQ
+        </h1>
+      </div>
 
-      {/* 🔥 BIG BACKGROUND LOGO */}
-      <h1 className="absolute text-[18vw] font-bold text-[#2f5d8c]/10 select-none pointer-events-none">
-        TENORQ
-      </h1>
       <div
         style={{ opacity, transform: `scale(${scale})` }}
-        className="transition-transform"
+        className="relative z-10 max-w-4xl transition-transform duration-300 ease-out text-center"
       >
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-center">
-          Engineering software systems that scale.
+        <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-[#2f5d8c] uppercase border border-[#2f5d8c]/30 rounded-full bg-[#2f5d8c]/5">
+          Software Architecture & Engineering
+        </span>
+        
+        <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.1]">
+          Engineering systems <br />
+          <span className="bg-gradient-to-r from-[#2f5d8c] via-[#4a86c2] to-[#2f5d8c] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+            that scale.
+          </span>
         </h1>
 
-        <p className="mt-5 text-center text-[color:var(--color-foreground)]/70">
-          We design systems built for performance, reliability, and growth.
+        <p className="max-w-xl mx-auto text-lg md:text-xl text-[#9ca3af] mb-10 leading-relaxed">
+          We design and build high-performance, resilient, and future-proof digital infrastructure for modern enterprises.
         </p>
 
-        <div className="flex justify-center">
-          <button className="mt-6 px-5 py-2.5 rounded-lg bg-[color:var(--color-accent)] text-white">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="px-8 py-4 rounded-full bg-[#2f5d8c] hover:bg-[#3a72ab] text-white font-medium transition-all shadow-lg shadow-[#2f5d8c]/20 hover:shadow-[#2f5d8c]/40 active:scale-95">
             Start a conversation
+          </button>
+          <button className="px-8 py-4 rounded-full border border-white/10 hover:bg-white/5 text-white font-medium transition-all active:scale-95">
+            View our work
           </button>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes gradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .animate-gradient {
+          animation: gradient 6s ease infinite;
+        }
+      `}</style>
     </section>
   );
 }

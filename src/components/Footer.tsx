@@ -1,11 +1,45 @@
+import { Logo } from "./Logo";
+
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="border-t border-black/10 dark:border-white/10 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex justify-between text-sm opacity-70">
-        <span>© 2026 Tenorq</span>
-        <div className="flex gap-4">
-          <a href="#hero">Home</a>
-          <a href="#process">Process</a>
+    <footer className="border-t border-white/5 py-16 px-6 bg-black/40 backdrop-blur-sm">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="md:col-span-2">
+            <Logo />
+            <p className="mt-6 text-[#9ca3af] max-w-sm leading-relaxed">
+              Engineering the next generation of scalable software systems. 
+              We build for reliability, performance, and impact.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="text-white font-semibold mb-6">Company</h4>
+            <ul className="space-y-4 text-sm text-[#9ca3af]">
+              <li><a href="#whatwebuild" className="hover:text-[#2f5d8c] transition-colors">What We Build</a></li>
+              <li><a href="#howwethink" className="hover:text-[#2f5d8c] transition-colors">How We Think</a></li>
+              <li><a href="#value" className="hover:text-[#2f5d8c] transition-colors">Value</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-6">Connect</h4>
+            <ul className="space-y-4 text-sm text-[#9ca3af]">
+              <li><a href="#" className="hover:text-[#2f5d8c] transition-colors">LinkedIn</a></li>
+              <li><a href="#" className="hover:text-[#2f5d8c] transition-colors">Twitter</a></li>
+              <li><a href="#" className="hover:text-[#2f5d8c] transition-colors">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-xs font-medium tracking-widest text-[#9ca3af]/50 uppercase">
+          <span>© {currentYear} Tenorq. All rights reserved.</span>
+          <div className="flex gap-8 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -12,13 +12,13 @@ export function Section({
   return (
     <section
       id={id}
-      className={`py-14 px-6 md:px-10 ${
+      className={`py-24 px-6 md:px-10 relative overflow-hidden ${
         variant === "surface"
-          ? "bg-[color:var(--color-surface)]"
+          ? "bg-[#121212]/50 border-y border-white/5"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto">{children}</div>
+      <div className="max-w-6xl mx-auto relative z-10">{children}</div>
     </section>
   );
 }

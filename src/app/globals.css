@@ -1,39 +1,49 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0b0b0b;
+  --background: #0b0b0b;
+  --foreground: #f3f4f6;
   --accent: #2f5d8c;
+  --accent-light: #4a86c2;
   --muted: #9ca3af;
-  --surface: #f8fafc; /* subtle section bg */
-  --border-soft: rgba(0, 0, 0, 0.06);
+  --surface: #121212;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
   --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-border-custom: var(--border);
 }
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-feature-settings: "ss01", "ss03", "cv01", "cv11";
 }
 
-/* subtle depth */
+/* Vibrant background effect */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: radial-gradient(
-    circle at 20% 20%,
-    rgba(47, 93, 140, 0.06),
-    transparent 40%
-  );
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(47, 93, 140, 0.15) 0%, transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(47, 93, 140, 0.1) 0%, transparent 35%);
   z-index: -1;
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
 }
