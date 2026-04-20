@@ -23,7 +23,7 @@ export function Hero() {
       </div>
 
       {/* Large Background Logo with Parallax */}
-      <div 
+      <div
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden"
         style={{ transform: `translateY(${translateY}px)` }}
       >
@@ -39,7 +39,7 @@ export function Hero() {
         <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-blue-400 uppercase border border-blue-400/30 rounded-full bg-blue-400/5">
           Software Architecture & Engineering
         </span>
-        
+
         <h1 className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 leading-[1.1]">
           Engineering systems <br />
           <span className="bg-gradient-to-r from-blue-400 via-blue-200 to-blue-400 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
@@ -48,27 +48,31 @@ export function Hero() {
         </h1>
 
         <p className="max-w-xl mx-auto text-lg md:text-xl text-gray-400 mb-10 leading-relaxed font-medium">
-          We design and build high-performance, resilient, and future-proof digital infrastructure for modern enterprises.
+          We design and build high-performance, resilient, and future-proof
+          digital infrastructure for modern enterprises.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a 
+          <a
             href="mailto:contact@tenorq.com"
             className="w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-95"
           >
             Start a conversation
           </a>
-          <button className="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 hover:bg-white/5 text-white font-semibold transition-all active:scale-95">
-            View our work
-          </button>
         </div>
       </div>
 
       <style jsx>{`
         @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
         }
         .animate-gradient {
           animation: gradient 6s ease infinite;
