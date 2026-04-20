@@ -8,7 +8,7 @@ export function SectionHeader({ title, subtitle, tag }: HeaderProps) {
   return (
     <div className="max-w-3xl mb-12">
       {tag && (
-        <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-[#2f5d8c] mb-4">
+        <span className="inline-block text-sm md:text-base font-bold uppercase tracking-[0.2em] text-[#2f5d8c] mb-4">
           {tag}
         </span>
       )}
