@@ -53,17 +53,17 @@ export default function Home() {
             subtitle="Every system is designed as a whole, not just features stitched together. We prioritize clarity and structural integrity."
           />
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-              <h4 className="text-[#2f5d8c] font-bold mb-4">Scalability</h4>
-              <p className="text-[#9ca3af] text-sm leading-relaxed">Designing for tomorrow's growth today without over-engineering.</p>
+            <div className="p-8 rounded-2xl border border-white/5 bg-white/[0.03]">
+              <h4 className="text-blue-400 font-bold text-lg mb-4">Scalability</h4>
+              <p className="text-gray-300 leading-relaxed">Designing for tomorrow's growth today without over-engineering.</p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-              <h4 className="text-[#2f5d8c] font-bold mb-4">Reliability</h4>
-              <p className="text-[#9ca3af] text-sm leading-relaxed">Systems that stay up when it matters most, with robust error handling.</p>
+            <div className="p-8 rounded-2xl border border-white/5 bg-white/[0.03]">
+              <h4 className="text-blue-400 font-bold text-lg mb-4">Reliability</h4>
+              <p className="text-gray-300 leading-relaxed">Systems that stay up when it matters most, with robust error handling.</p>
             </div>
-            <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-              <h4 className="text-[#2f5d8c] font-bold mb-4">Performance</h4>
-              <p className="text-[#9ca3af] text-sm leading-relaxed">Optimized from the database to the edge for lightning-fast responses.</p>
+            <div className="p-8 rounded-2xl border border-white/5 bg-white/[0.03]">
+              <h4 className="text-blue-400 font-bold text-lg mb-4">Performance</h4>
+              <p className="text-gray-300 leading-relaxed">Optimized from the database to the edge for lightning-fast responses.</p>
             </div>
           </div>
         </Section>
@@ -82,14 +82,21 @@ export default function Home() {
             title="Our Process"
             subtitle="A disciplined approach to solving complex engineering challenges."
           />
-          <div className="mt-12 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {['Understand', 'Design', 'Build', 'Iterate'].map((step, i) => (
-              <div key={step} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[#2f5d8c]/20 border border-[#2f5d8c]/40 flex items-center justify-center text-[#2f5d8c] font-bold">
+              <div key={step} className="flex flex-row sm:flex-col items-center sm:items-start gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-xl">
                   {i + 1}
                 </div>
-                <span className="text-white font-medium">{step}</span>
-                {i < 3 && <div className="hidden md:block w-12 h-px bg-white/10" />}
+                <div>
+                  <h4 className="text-white font-bold text-lg mb-2">{step}</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    {i === 0 && "Deep dive into requirements and constraints."}
+                    {i === 1 && "Architecting the solution for scale."}
+                    {i === 2 && "Execution with precision and quality."}
+                    {i === 3 && "Refining based on real-world feedback."}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
