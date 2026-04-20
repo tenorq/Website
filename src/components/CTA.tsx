@@ -17,7 +17,8 @@ export function CTA() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="mailto:contact@tenorq.com"
+            // href="mailto:contact@tenorq.com"
+            href="mailto:satviksachan02@gmail.com?subject=Inquiry&body=Hey%2C%0AI%20have%20a%20question....."
             className="w-full sm:w-auto px-10 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-95"
           >
             Contact Us
