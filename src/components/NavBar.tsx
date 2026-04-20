@@ -6,6 +6,8 @@ export function Navbar() {
     { id: "howwethink", label: "How We Think" },
     { id: "value", label: "Value" },
     { id: "process", label: "Process" },
+    { id: "ai", label: "AI" },
+    { id: "who", label: "Clients" },
   ];
 
   return (
