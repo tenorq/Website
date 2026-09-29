@@ -49,11 +49,17 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Connect</h4>
             <ul className="space-y-4 text-sm text-[#9ca3af]">
               <li>hello@tenorq.com</li>
-              {/* <li>
-                <a href="#" className="hover:text-[#2f5d8c] transition-colors">
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/tenorq/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#2f5d8c] transition-colors"
+                >
                   LinkedIn
                 </a>
               </li>
+              {/*
               <li>
                 <a href="#" className="hover:text-[#2f5d8c] transition-colors">
                   Twitter
