@@ -6,207 +6,82 @@ import { Navbar } from "@/components/NavBar";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 
+const platformFeatures = [
+  ["Merchant Onboarding", "Bring merchants onto the platform through a streamlined digital workflow."],
+  ["Payment Collections", "Support merchant collections across QR, payment links, cards, and other payment channels."],
+  ["Settlements", "Give merchants and banks clear visibility into settlement activity."],
+  ["Reconciliation", "Simplify transaction tracking and reconciliation across payment activity."],
+  ["Merchant Management", "Manage merchants, stores, users, configurations, and access from one platform."],
+  ["Analytics & Reporting", "Turn transaction and merchant data into actionable operational insights."],
+];
+
+const principles = [
+  ["Scalability", "Build for today's requirements without creating tomorrow's bottlenecks."],
+  ["Reliability", "Systems should behave predictably when they matter most."],
+  ["Performance", "Efficient systems create better experiences and lower operational overhead."],
+  ["Simplicity", "Good architecture reduces unnecessary complexity rather than hiding it."],
+];
+
+const processSteps = [
+  ["Understand", "Understand the users, business requirements, constraints, and existing systems."],
+  ["Design", "Define the product, architecture, workflows, and technical foundations."],
+  ["Build", "Turn the design into reliable, production-ready software."],
+  ["Iterate", "Learn from real usage, improve the system, and continue building."],
+];
+
 export default function Home() {
   return (
     <main className="bg-[#0b0b0b]">
       <Navbar />
-
       <Hero />
-
       <div className="relative z-10">
-        <Section id="whatwebuild" className="pt-24 pb-14">
-          <SectionHeader
-            tag="Capabilities"
-            title="What We Build"
-            subtitle="We focus on systems that are reliable, scalable, and built for real-world usage."
-          />
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            <InfoCard
-              title="Backend Systems & APIs"
-              desc="Designed to handle extreme scale, complex data flows, and mission-critical production workloads."
-            />
-
-            <InfoCard
-              title="Cloud Infrastructure"
-              desc="Resilient, automated cloud environments optimized for performance and cost-efficiency."
-            />
-
-            <InfoCard
-              title="Real-time Systems"
-              desc="High-throughput, low-latency architectures for modern data-driven applications."
-            />
-
-            <InfoCard
-              title="System Architecture"
-              desc="Comprehensive technical blueprints built for long-term maintainability and rapid growth."
-            />
+        <Section id="products" className="pt-24 pb-14">
+          <SectionHeader tag="Products" title="Products built for real-world systems." subtitle="We build focused technology products that solve complex operational and business problems." />
+          <div className="mt-14 max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-400">Merchant Platform</p>
+            <h3 className="mt-3 text-3xl md:text-4xl font-bold tracking-tight text-white">Modern merchant infrastructure for banks.</h3>
+            <p className="mt-5 max-w-3xl text-gray-400 leading-relaxed">A configurable merchant platform that helps banks onboard, manage, and serve their merchant ecosystem through a unified digital experience.</p>
+          </div>
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {platformFeatures.map(([title, desc]) => <InfoCard key={title} title={title} desc={desc} />)}
           </div>
         </Section>
 
-        <Section id="howwethink" variant="surface">
-          <SectionHeader
-            tag="Philosophy"
-            title="Built with Intent"
-            subtitle="Every system is designed as a whole, not just features stitched together. We prioritize clarity and structural integrity."
-          />
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <InfoCard
-              title="Scalability"
-              desc="Designing for tomorrow's growth today without over-engineering."
-            />
-
-            <InfoCard
-              title="Reliability"
-              desc="Systems that stay up when it matters most, with robust error handling."
-            />
-
-            <InfoCard
-              title="Performance"
-              desc="Optimized from the database to the edge for lightning-fast responses."
-            />
+        <Section id="approach" variant="surface">
+          <SectionHeader tag="Approach" title="Simple principles. Serious engineering." subtitle="Technology becomes difficult when unnecessary complexity gets in the way. We focus on building systems that are understandable, dependable, and designed for the problems they actually need to solve." />
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {principles.map(([title, desc]) => <InfoCard key={title} title={title} desc={desc} />)}
           </div>
         </Section>
 
-        <Section id="value">
-          <SectionHeader
-            tag="Impact"
-            title="How We Add Value"
-            subtitle="We go beyond implementation by focusing on how your system should work at scale."
-          />
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <InfoCard
-              title="Designed for Longevity"
-              desc="We design systems that reduce future rework by making the right architectural decisions early, ensuring your product evolves without costly rewrites."
-            />
-
-            <InfoCard
-              title="Performance & Reliability First"
-              desc="Every system is built with performance and reliability as core priorities — not afterthoughts — so it holds up under real-world load."
-            />
-
-            <InfoCard
-              title="Maintainable Codebases"
-              desc="We structure codebases for long-term maintainability, making it easier for teams to extend, debug, and scale the system over time."
-            />
-
-            <InfoCard
-              title="Built for Real-World Usage"
-              desc="We anticipate edge cases, failures, and user behavior patterns to ensure your system performs reliably outside of ideal conditions."
-            />
-          </div>
-
-          <div className="mt-12 max-w-3xl ">
-            <p className="text-gray-400 text-base leading-relaxed">
-              The goal is simple — to build software that continues to deliver
-              value well beyond the initial launch.
-            </p>
-          </div>
-        </Section>
-
-        <Section id="process" variant="surface">
-          <SectionHeader
-            tag="Workflow"
-            title="Our Process"
-            subtitle="A disciplined approach to solving complex engineering challenges."
-          />
+        <Section id="process">
+          <SectionHeader tag="Process" title="From problem to product." subtitle="We don't start with technology. We start by understanding the problem." />
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {["Understand", "Design", "Build", "Iterate"].map((step, i) => (
-              <div
-                key={step}
-                className="flex flex-row sm:flex-col items-center sm:items-start gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.02]"
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-xl">
-                  {i + 1}
-                </div>
-                <div>
-                  <h4 className="text-white font-bold text-lg mb-2">{step}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
-                    {i === 0 && "Deep dive into requirements and constraints."}
-                    {i === 1 && "Architecting the solution for scale."}
-                    {i === 2 && "Execution with precision and quality."}
-                    {i === 3 && "Refining based on real-world feedback."}
-                  </p>
-                </div>
+            {processSteps.map(([title, desc], i) => (
+              <div key={title} className="flex flex-row sm:flex-col items-center sm:items-start gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 font-bold text-lg">{String(i + 1).padStart(2, "0")}</div>
+                <div><h4 className="text-white font-bold text-lg mb-2">{title}</h4><p className="text-gray-400 text-sm leading-relaxed">{desc}</p></div>
               </div>
             ))}
           </div>
         </Section>
+
         <Section id="ai" variant="surface">
-          <SectionHeader
-            tag="AI"
-            title="Practical Use of AI, Where It Matters"
-            subtitle="We apply AI with intent — only where it genuinely improves the system."
-          />
-
-          <div className="mt-12 max-w-4xl">
-            <p className="text-gray-400 leading-relaxed mb-6">
-              AI is powerful — when used correctly. We integrate AI-driven
-              solutions where they enhance real-world systems, such as
-              automation, data processing, and intelligent workflows.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed mb-6">
-              At the same time, we avoid unnecessary complexity. Not every
-              system benefits from AI, and forcing it often leads to fragile,
-              inefficient solutions.
-            </p>
-
-            <p className="text-gray-400 leading-relaxed">
-              Our priority remains the same: building efficient, reliable
-              systems — with or without AI.
-            </p>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <InfoCard
-              title="Applied, Not Forced"
-              desc="We use AI only where it delivers measurable value, not as a checkbox feature."
-            />
-            <InfoCard
-              title="Focused on Outcomes"
-              desc="From automation to intelligent workflows, every use case is tied to real impact."
-            />
-            <InfoCard
-              title="Engineering First"
-              desc="Strong system design always comes first — AI is an enhancement, not a substitute."
-            />
+          <SectionHeader tag="AI" title="Intelligence where it creates real value." subtitle="AI is becoming part of how modern software is built and operated." />
+          <div className="mt-10 max-w-4xl space-y-5 text-gray-400 leading-relaxed">
+            <p>At Tenorq, we look at AI as a capability within a larger system — not as a product feature added for its own sake.</p>
+            <p>We explore practical applications of AI across automation, operational intelligence, decision support, and software workflows where it can create measurable value.</p>
           </div>
         </Section>
 
-        <Section id="who">
-          <SectionHeader
-            tag="Clients"
-            title="Who We Work With"
-            subtitle="We partner with teams building meaningful, long-term digital products."
-          />
-
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <InfoCard
-              title="Product-Focused Companies"
-              desc="Teams building complex platforms that require strong architecture and scalable systems."
-            />
-
-            <InfoCard
-              title="Scaling Startups & Teams"
-              desc="Growing teams that need to evolve their infrastructure without breaking existing systems."
-            />
-
-            <InfoCard
-              title="Operationally Driven Organizations"
-              desc="Businesses improving internal systems, automation, and efficiency through better engineering."
-            />
-
-            <InfoCard
-              title="Serious Founders"
-              desc="Founders focused on long-term product quality, not short-term shortcuts."
-            />
+        <Section id="company">
+          <SectionHeader tag="Company" title="We build technology for what's next." subtitle="Tenorq is a technology company focused on building software products and infrastructure for complex, real-world problems." />
+          <div className="mt-8 max-w-4xl space-y-5 text-gray-400 leading-relaxed">
+            <p>We believe the best technology is not defined by how complicated it is, but by how effectively it solves the problem.</p>
+            <p>Our work spans product engineering, backend systems, infrastructure, and emerging technologies — with a focus on building things that are useful, reliable, and built to last.</p>
           </div>
         </Section>
-
         <CTA />
-
         <Footer />
       </div>
     </main>

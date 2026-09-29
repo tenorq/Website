@@ -10,8 +10,8 @@ export function Footer() {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-6 text-[#9ca3af] max-w-sm leading-relaxed">
-              Engineering the next generation of scalable software systems. We
-              build for reliability, performance, and impact.
+              Tenorq is a technology company building products that help
+              financial institutions and merchants work better together.
             </p>
           </div>
 
@@ -20,26 +20,26 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-[#9ca3af]">
               <li>
                 <a
-                  href="#whatwebuild"
+                  href="#products"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
-                  What We Build
+                  Products
                 </a>
               </li>
               <li>
                 <a
-                  href="#howwethink"
+                  href="#approach"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
-                  How We Think
+                  Approach
                 </a>
               </li>
               <li>
                 <a
-                  href="#value"
+                  href="#company"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
-                  Value
+                  Company
                 </a>
               </li>
             </ul>
@@ -48,7 +48,8 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-6">Connect</h4>
             <ul className="space-y-4 text-sm text-[#9ca3af]">
-              <li>
+              <li>hello@tenorq.com</li>
+              {/* <li>
                 <a href="#" className="hover:text-[#2f5d8c] transition-colors">
                   LinkedIn
                 </a>
@@ -62,7 +63,7 @@ export function Footer() {
                 <a href="#" className="hover:text-[#2f5d8c] transition-colors">
                   GitHub
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
