@@ -21,35 +21,25 @@ export function CTA() {
     const form = event.currentTarget;
 
     try {
-      const response = await fetch(
-        "https://formsubmit.co/ajax/hello@tenorq.com",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify({
-            ...Object.fromEntries(new FormData(form).entries()),
-            _url: window.location.href.split("#")[0],
-          }),
-        },
-      );
+      const formData = new FormData(form);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
+      });
       const responseBody = await response.text();
       let result: { success?: boolean | string; message?: string };
       try {
         result = JSON.parse(responseBody);
       } catch {
-        throw new Error(
-          `FormSubmit returned ${response.status}: ${responseBody}`,
-        );
+        throw new Error(`Contact endpoint returned ${response.status}: ${responseBody}`);
       }
       if (
         !response.ok ||
         !(result.success === true || result.success === "true")
       ) {
         throw new Error(
-          result.message ?? `FormSubmit returned ${response.status}`,
+          result.message ?? `Contact endpoint returned ${response.status}`,
         );
       }
       form.reset();
@@ -87,11 +77,9 @@ export function CTA() {
           onSubmit={handleSubmit}
           className="max-w-xl mx-auto grid gap-4 text-left"
         >
-          <input
-            type="hidden"
-            name="_subject"
-            value="New inquiry from Tenorq website"
-          />
+          <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
+            <label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label>
+          </div>
           <label className="grid gap-2 text-sm text-gray-300">
             Your name
             <input

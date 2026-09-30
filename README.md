@@ -99,6 +99,16 @@ It is built to reflect our engineering principles:
 - **TypeScript**
 - **Geist Font (Next.js font optimization)**
 
+## Contact form email setup
+
+The contact form sends submissions through the Next.js `/api/contact` route and Resend. Copy `.env.example` to `.env.local` and set:
+
+- `RESEND_API_KEY`: a Resend API key. Keep this server-side; do not prefix it with `NEXT_PUBLIC_`.
+- `RESEND_FROM_EMAIL`: a sender address on a domain verified in Resend.
+- `CONTACT_TO_EMAIL`: where contact requests should arrive (defaults to `hello@tenorq.com`).
+
+Set the same values as environment variables in the production hosting platform. Sending will remain disabled until `RESEND_API_KEY` and `RESEND_FROM_EMAIL` are configured.
+
 ---
 
 ## ✨ Key Characteristics
