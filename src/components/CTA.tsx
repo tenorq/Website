@@ -32,7 +32,9 @@ export function CTA() {
       try {
         result = JSON.parse(responseBody);
       } catch {
-        throw new Error(`Contact endpoint returned ${response.status}: ${responseBody}`);
+        throw new Error(
+          `Contact endpoint returned ${response.status}: ${responseBody}`,
+        );
       }
       if (
         !response.ok ||
@@ -51,7 +53,8 @@ export function CTA() {
       console.error("Contact form submission failed:", error);
       setNotice({
         kind: "error",
-        message: "We couldn’t send your message. Please try again.",
+        message:
+          "We couldn’t send your message. Make sure your details are correct and please try again.",
       });
     } finally {
       setSending(false);
@@ -77,8 +80,14 @@ export function CTA() {
           onSubmit={handleSubmit}
           className="max-w-xl mx-auto grid gap-4 text-left"
         >
-          <div aria-hidden="true" className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden">
-            <label>Leave this field empty<input name="website" tabIndex={-1} autoComplete="off" /></label>
+          <div
+            aria-hidden="true"
+            className="absolute -left-[10000px] top-auto h-px w-px overflow-hidden"
+          >
+            <label>
+              Leave this field empty
+              <input name="website" tabIndex={-1} autoComplete="off" />
+            </label>
           </div>
           <label className="grid gap-2 text-sm text-gray-300">
             Your name
