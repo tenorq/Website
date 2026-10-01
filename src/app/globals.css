@@ -1,14 +1,27 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #111820;
+  --accent: #2f5d8c;
+  --accent-brand: #2f5d8c;
+  --accent-light: #2f5d8c;
+  --muted: #687383;
+  --surface: #f4f6f8;
+  --border: rgba(11, 11, 11, 0.12);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
   --background: #0b0b0b;
   --foreground: #f3f4f6;
-  --accent: #3b82f6; /* More vibrant blue for better pop */
+  --accent: #2f5d8c;
   --accent-brand: #2f5d8c;
-  --accent-light: #60a5fa;
+  --accent-light: #9ca3af;
   --muted: #9ca3af;
-  --surface: #121212;
-  --border: rgba(255, 255, 255, 0.1);
+  --surface: #121820;
+  --border: rgba(255, 255, 255, 0.12);
 }
 
 @theme inline {
@@ -22,30 +35,51 @@
   --color-border-custom: var(--border);
 }
 
-html {
-  scroll-behavior: smooth;
-  color-scheme: dark;
-}
-
+html { scroll-behavior: smooth; }
 body {
   background: var(--background);
   color: var(--foreground);
   font-feature-settings: "ss01", "ss03", "cv01", "cv11";
+  transition: background-color 180ms ease, color 180ms ease;
 }
-
-/* Vibrant background effect */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: 
-    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 35%),
-    radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.05) 0%, transparent 35%);
+  background: radial-gradient(circle at 0% 0%, rgba(47, 93, 140, 0.08) 0%, transparent 35%), radial-gradient(circle at 100% 100%, rgba(47, 93, 140, 0.04) 0%, transparent 35%);
   z-index: -1;
   pointer-events: none;
 }
+::selection { background: var(--accent); color: white; }
 
-::selection {
-  background: var(--accent);
-  color: white;
+/* Keep the existing page structure while mapping its utility colors to the brand themes. */
+[class~="text-white"] { color: var(--foreground) !important; }
+[class~="text-gray-300"], [class~="text-gray-400"], [class~="text-[#9ca3af]"] { color: var(--muted) !important; }
+[class~="text-blue-400"], [class~="text-blue-500"], [class~="text-blue-600"], [class~="text-[#2f5d8c]"] { color: var(--accent) !important; }
+[class~="bg-[#0b0b0b]"], [class~="bg-black/40"] { background-color: var(--background) !important; }
+[class~="bg-[#121212]"], [class~="bg-[#121212]/80"], [class~="bg-[#0f172a]/40"] { background-color: var(--surface) !important; }
+[class~="border-white/10"], [class~="border-white/5"], [class~="border-white/[0.03]"], [class~="border-white/[0.05]"] { border-color: var(--border) !important; }
+[class~="bg-white/[0.02]"], [class~="bg-white/[0.03]"], [class~="bg-white/[0.01]"] { background-color: color-mix(in srgb, var(--foreground) 3%, transparent) !important; }
+[class~="hover:text-white"]:hover { color: var(--foreground) !important; }
+[class~="hover:bg-blue-500"]:hover { background-color: #244b73 !important; }
+[class~="bg-blue-600"] { background-color: var(--accent) !important; }
+[class~="text-blue-400"] { color: var(--accent) !important; }
+[class~="text-white"][class~="bg-blue-600"] { color: #ffffff !important; }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--foreground) 4%, transparent);
+  color: var(--foreground);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background-color 150ms ease, border-color 150ms ease;
 }
+.theme-toggle:hover { background: color-mix(in srgb, var(--foreground) 8%, transparent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

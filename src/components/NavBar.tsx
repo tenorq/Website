@@ -1,4 +1,5 @@
 import { Logo } from "./Logo";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const links = [
@@ -26,12 +27,10 @@ export function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#cta"
-          className="px-5 py-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all active:scale-95 shadow-md shadow-blue-600/20"
-        >
-          Get in Touch
-        </a>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <a href="#cta" className="px-5 py-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all active:scale-95 shadow-md shadow-blue-600/20">Get in Touch</a>
+        </div>
       </div>
     </nav>
   );
