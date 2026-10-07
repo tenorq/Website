@@ -79,7 +79,25 @@ body::before {
   color: var(--foreground);
   font-size: 0.8rem;
   font-weight: 600;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 .theme-toggle:hover { background: color-mix(in srgb, var(--foreground) 8%, transparent); }
+.theme-toggle[data-target-theme="dark"] {
+  background: #111820;
+  border-color: #293443;
+  color: #f3f4f6;
+}
+.theme-toggle[data-target-theme="dark"]:hover {
+  background: #1b2633;
+  border-color: #3b4a5d;
+}
+.theme-toggle[data-target-theme="light"] {
+  background: #ffffff;
+  border-color: #d7dee7;
+  color: #111820;
+}
+.theme-toggle[data-target-theme="light"]:hover {
+  background: #f2f5f8;
+  border-color: #bdc8d5;
+}
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

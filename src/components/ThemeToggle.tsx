@@ -26,9 +26,10 @@ export function ThemeToggle() {
       aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
       aria-pressed={dark}
       className="theme-toggle"
+      data-target-theme={dark ? "light" : "dark"}
     >
-      <span aria-hidden="true">{dark ? "☾" : "☀"}</span>
-      <span className="hidden sm:inline">{dark ? "Dark" : "Light"}</span>
+      <span aria-hidden="true">{dark ? "☀" : "☾"}</span>
+      <span className="hidden sm:inline">{dark ? "Light" : "Dark"}</span>
     </button>
   );
 }
