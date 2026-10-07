@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tenorq",
-  description: "Tenorq builds financial technology products, including a customizable merchant collection application for banks.",
+  title: "Tenorq | Technology for modern financial systems",
+  description: "Tenorq builds modern software for financial institutions and businesses, connecting complex operations with simpler digital experiences.",
 };
 
 export default function RootLayout({

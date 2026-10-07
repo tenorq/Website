@@ -10,8 +10,8 @@ export function Footer() {
           <div className="md:col-span-2">
             <Logo />
             <p className="mt-6 text-[#9ca3af] max-w-sm leading-relaxed">
-              Tenorq is a technology company building products that help
-              financial institutions and merchants work better together.
+              Tenorq builds modern technology for financial institutions and
+              businesses, making complex systems simpler to use.
             </p>
           </div>
 
@@ -20,7 +20,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-[#9ca3af]">
               <li>
                 <a
-                  href="#products"
+                  href="/products"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
                   Products
@@ -28,7 +28,15 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#approach"
+                  href="/#modernisation"
+                  className="hover:text-[#2f5d8c] transition-colors"
+                >
+                  Modernisation
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#approach"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
                   Approach
@@ -36,7 +44,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#company"
+                  href="/#company"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
                   Company

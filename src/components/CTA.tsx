@@ -62,23 +62,17 @@ export function CTA() {
   }
 
   return (
-    <section id="cta" className="py-24 px-6 relative overflow-hidden">
-      {/* Background Accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none" />
-
-      <div className="max-w-4xl mx-auto relative z-10 p-12 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.03] to-white/[0.01] backdrop-blur-md text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-          Talk with <span className="text-blue-500">Tenorq.</span>
-        </h2>
-
-        <p className="max-w-xl mx-auto text-gray-400 text-lg mb-10">
-          Have a question about Tenorq or our merchant collection application?
-          Send us a message.
-        </p>
+    <section id="cta" className="scroll-mt-24 border-t border-white/10 px-6 py-24 md:px-10">
+      <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.85fr_1.15fr]">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">Contact</p>
+          <h2 className="mt-5 text-4xl font-semibold tracking-tight text-white md:text-5xl">Let’s talk about what you’re building.</h2>
+          <p className="mt-6 max-w-md text-lg leading-8 text-gray-400">Tell us what you’re looking to modernise. We’ll get back to you to understand the problem and explore what could help.</p>
+        </div>
 
         <form
           onSubmit={handleSubmit}
-          className="max-w-xl mx-auto grid gap-4 text-left"
+          className="grid gap-4 text-left"
         >
           <div
             aria-hidden="true"
@@ -90,22 +84,22 @@ export function CTA() {
             </label>
           </div>
           <label className="grid gap-2 text-sm text-gray-300">
-            Your name
+            Name
             <input
               required
               name="name"
               autoComplete="name"
-              className="rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-blue-500"
+              className="rounded-xl border border-white/10 bg-[#121212] px-4 py-3 text-white outline-none focus:border-blue-500"
             />
           </label>
           <label className="grid gap-2 text-sm text-gray-300">
-            Email address
+            Work email
             <input
               required
               type="email"
               name="email"
               autoComplete="email"
-              className="rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-blue-500"
+              className="rounded-xl border border-white/10 bg-[#121212] px-4 py-3 text-white outline-none focus:border-blue-500"
             />
           </label>
           <label className="grid gap-2 text-sm text-gray-300">
@@ -114,15 +108,15 @@ export function CTA() {
               required
               name="message"
               rows={4}
-              className="resize-y rounded-xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none focus:border-blue-500"
+              className="resize-y rounded-xl border border-white/10 bg-[#121212] px-4 py-3 text-white outline-none focus:border-blue-500"
             />
           </label>
           <button
             type="submit"
             disabled={sending}
-            className="mt-2 w-full sm:w-auto justify-self-center px-10 py-4 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold transition-all shadow-xl shadow-blue-600/20 hover:shadow-blue-600/40 active:scale-95"
+            className="mt-2 w-full justify-self-start rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition-colors hover:bg-blue-500 sm:w-auto"
           >
-            {sending ? "Sending…" : "Send message"}
+            {sending ? "Sending…" : "Talk to Tenorq"}
           </button>
         </form>
       </div>

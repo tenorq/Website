@@ -3,33 +3,30 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const links = [
-    { id: "products", label: "Products" },
-    { id: "approach", label: "Approach" },
-    { id: "process", label: "Process" },
-    { id: "ai", label: "AI" },
-    { id: "company", label: "Company" },
+    { href: "/products", label: "Products" },
+    { href: "/#modernisation", label: "Modernisation" },
+    { href: "/#approach", label: "Approach" },
+    { href: "/#process", label: "Process" },
+    { href: "/#ai", label: "AI" },
+    { href: "/#company", label: "Company" },
   ];
 
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] md:w-[calc(100%-3rem)] max-w-5xl z-50 backdrop-blur-xl bg-black/40 border border-white/10 rounded-2xl shadow-2xl">
-      <div className="flex justify-between items-center px-4 md:px-6 py-4">
-        <Logo />
-
-        <div className="hidden md:flex gap-8 text-sm font-medium tracking-wide">
-          {links.map((l) => (
-            <a
-              key={l.id}
-              href={`#${l.id}`}
-              className="text-gray-400 hover:text-white transition-colors duration-200"
-            >
-              {l.label}
-            </a>
-          ))}
+    <nav aria-label="Main navigation" className="fixed left-1/2 top-3 z-50 w-[calc(100%-1.5rem)] max-w-6xl -translate-x-1/2 rounded-2xl border border-white/10 bg-black/40 shadow-lg backdrop-blur-xl sm:top-4 md:top-6 md:w-[calc(100%-3rem)]">
+      <div className="flex items-center justify-between gap-1 px-3 py-2.5 sm:px-4 sm:py-3 md:px-6">
+        <a href="/" aria-label="Tenorq home"><Logo /></a>
+        <div className="hidden items-center gap-7 text-sm font-medium md:flex">
+          {links.map((link) => <a key={link.href} href={link.href} className="text-gray-400 transition-colors hover:text-white">{link.label}</a>)}
         </div>
-
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <details className="group relative md:hidden">
+            <summary className="list-none cursor-pointer rounded-xl border border-white/10 px-2.5 py-2 text-xs font-semibold text-gray-400 transition-colors hover:text-white">Menu</summary>
+            <div className="absolute right-0 top-[calc(100%+0.75rem)] grid w-[min(17rem,calc(100vw-1.5rem))] gap-1 rounded-2xl border border-white/10 bg-[#0b0b0b] p-2 shadow-xl">
+              {links.map((link) => <a key={link.href} href={link.href} className="rounded-xl px-3 py-3 text-sm font-medium text-gray-400 transition-colors hover:bg-white/[0.05] hover:text-white">{link.label}</a>)}
+            </div>
+          </details>
           <ThemeToggle />
-          <a href="#cta" className="px-5 py-2 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all active:scale-95 shadow-md shadow-blue-600/20">Get in Touch</a>
+          <a href="/#cta" className="rounded-full bg-blue-600 px-2.5 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-blue-500 sm:px-4 sm:text-sm md:px-5"><span className="sm:hidden">Contact</span><span className="hidden sm:inline">Talk to us</span></a>
         </div>
       </div>
     </nav>
