@@ -21,7 +21,7 @@ export function Navbar() {
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <details className="group relative md:hidden">
             <summary className="list-none cursor-pointer rounded-xl border border-white/10 px-2.5 py-2 text-xs font-semibold text-gray-400 transition-colors hover:text-white">Menu</summary>
-            <div className="absolute right-0 top-[calc(100%+0.75rem)] grid w-[min(17rem,calc(100vw-1.5rem))] gap-1 rounded-2xl border border-white/10 bg-[#0b0b0b] p-2 shadow-xl">
+            <div className="absolute right-[-7rem] top-[calc(100%+0.75rem)] grid w-[min(17rem,calc(100vw-3rem))] gap-1 rounded-2xl border border-white/10 bg-[#0b0b0b] p-2 shadow-xl">
               {links.map((link) => <a key={link.href} href={link.href} className="rounded-xl px-3 py-3 text-sm font-medium text-gray-400 transition-colors hover:bg-white/[0.05] hover:text-white">{link.label}</a>)}
             </div>
           </details>
