@@ -5,12 +5,16 @@ import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "/products", label: "Products" },
   { href: "/#modernisation", label: "Modernisation" },
   { href: "/#approach", label: "Approach" },
   { href: "/#process", label: "Process" },
   { href: "/#ai", label: "AI" },
   { href: "/#company", label: "Company" },
+];
+
+const productLinks = [
+  { href: "/products/merchant-platform", label: "Merchant Platform", detail: "For banks" },
+  { href: "/products/dukaanai", label: "DukaanAI", detail: "Coming soon" },
 ];
 
 export function Navbar() {
@@ -21,6 +25,19 @@ export function Navbar() {
       <div className="flex items-center justify-between gap-1 px-3 py-2.5 sm:px-4 sm:py-3 md:px-6">
         <a href="/" aria-label="Tenorq home" onClick={() => setMenuOpen(false)}><Logo /></a>
         <div className="hidden items-center gap-7 text-sm font-medium md:flex">
+          <div className="group relative">
+            <a href="/products" className="text-gray-400 transition-colors hover:text-white" aria-haspopup="true">Products</a>
+            <div className="invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-3 opacity-0 transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+              <div className="rounded-2xl border border-white/10 bg-[#0b0b0b] p-2 shadow-xl">
+                {productLinks.map((link) => (
+                  <a key={link.href} href={link.href} className="block rounded-xl px-3 py-3 transition-colors hover:bg-white/[0.05]">
+                    <span className="block text-sm font-medium text-white">{link.label}</span>
+                    <span className="mt-0.5 block text-xs text-gray-400">{link.detail}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
           {links.map((link) => <a key={link.href} href={link.href} className="text-gray-400 transition-colors hover:text-white">{link.label}</a>)}
         </div>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
@@ -39,6 +56,24 @@ export function Navbar() {
       </div>
       {menuOpen && (
         <div id="mobile-site-menu" className="absolute right-3 top-[calc(100%+0.75rem)] grid w-[min(17rem,calc(100vw-3rem))] gap-1 rounded-2xl border border-white/10 bg-[#0b0b0b] p-2 shadow-xl md:hidden">
+          <a
+            href="/products"
+            onClick={() => setMenuOpen(false)}
+            className="rounded-xl px-3 py-3 text-sm font-medium text-gray-400 transition-colors hover:bg-white/[0.05] hover:text-white"
+          >
+            Products
+          </a>
+          {productLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="rounded-xl py-2 pl-6 pr-3 text-sm text-gray-400 transition-colors hover:bg-white/[0.05] hover:text-white"
+            >
+              {link.label}
+              <span className="mt-0.5 block text-xs text-gray-400">{link.detail}</span>
+            </a>
+          ))}
           {links.map((link) => (
             <a
               key={link.href}

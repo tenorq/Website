@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CTA } from "@/components/CTA";
+import { DukaanPhone } from "@/components/DukaanPhone";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/NavBar";
@@ -71,6 +72,22 @@ export default function Home() {
               <Image src="/images/products/bank-dashboard.png" alt="Merchant platform bank operations dashboard" width={1554} height={1082} priority className="h-auto w-full rounded-lg border border-slate-200 shadow-xl" sizes="(max-width: 768px) 100vw, 55vw" />
             </div>
           </a>
+        </div>
+      </section>
+
+      <section className="scroll-mt-28 border-y border-white/10 bg-[#121212] px-6 py-24 md:px-10 md:py-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">Newest product</p>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-5xl">Introducing DukaanAI</h2>
+            <p className="mt-5 text-xl font-medium text-white">Voice-first billing for everyday businesses.</p>
+            <p className="mt-5 max-w-xl text-lg leading-8 text-gray-400">Meet our newest product, for small merchants who want to make a customer bill by speaking the order. It sits alongside the merchant platform. It does not replace it.</p>
+            <p className="mt-6 w-fit rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] dukaan-kicker">Coming soon</p>
+            <a href="/products/dukaanai" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-blue-600 px-6 text-sm font-semibold text-white transition-colors hover:bg-blue-500">Explore DukaanAI</a>
+          </div>
+          <div className="flex justify-center lg:justify-end">
+            <DukaanPhone sizes="220px" className="w-full max-w-[220px]" />
+          </div>
         </div>
       </section>
 
