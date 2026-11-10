@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/products/dukaanai-dashboard.PNG",
+        url: "/images/products/dukaanai-dashboard.png",
         width: 1179,
         height: 2556,
         alt: "DukaanAI home screen",
