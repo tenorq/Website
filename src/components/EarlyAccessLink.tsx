@@ -23,8 +23,7 @@ export function EarlyAccessLink({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSending(true);
-    setNotice(null);
+   
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -32,7 +31,10 @@ export function EarlyAccessLink({
     const email = formData.get("email");
     const website = (formData.get("website") as string) || "";
 
-    if (typeof email !== "string") return;
+    if (typeof email !== "string" || !email.trim()) return;
+    
+    setSending(true);
+    setNotice(null);
 
     try {
       const response = await fetch("/api/contact", {
