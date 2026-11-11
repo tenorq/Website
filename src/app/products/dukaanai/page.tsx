@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { DukaanPhone } from "@/components/DukaanPhone";
-import { EarlyAccessLink } from "@/components/EarlyAccessLink";
+import { EarlyAccessForm } from "@/components/EarlyAccessForm";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/NavBar";
 
@@ -60,10 +60,19 @@ const steps = [
 ];
 
 const audiences = [
-  ["Kirana stores", "Neighbourhood counters, where the bill has to keep pace with the queue."],
-  ["Grocery shops", "Daily goods, spoken the way customers actually ask for them."],
+  [
+    "Kirana stores",
+    "Neighbourhood counters, where the bill has to keep pace with the queue.",
+  ],
+  [
+    "Grocery shops",
+    "Daily goods, spoken the way customers actually ask for them.",
+  ],
   ["General stores", "Mixed shelves, without a large point-of-sale setup."],
-  ["Independent retailers", "Owners who want a bill without learning a complicated system."],
+  [
+    "Independent retailers",
+    "Owners who want a bill without learning a complicated system.",
+  ],
 ];
 
 const exampleItems = [
@@ -89,13 +98,14 @@ export default function DukaanAiPage() {
               Billing, just got simpler.
             </p>
             <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
-              A voice-first billing experience for everyday merchants. Speak an order, review the items and prepare a ready-to-pay bill.
+              A voice-first billing experience for everyday merchants. Speak an
+              order, review the items and prepare a ready-to-pay bill.
             </p>
             <p className="mt-6 w-fit rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] dukaan-kicker">
               Coming soon
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <EarlyAccessLink />
+              <EarlyAccessForm />
               <a
                 href="#features"
                 className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/[0.05]"
@@ -122,7 +132,8 @@ export default function DukaanAiPage() {
           </h2>
           <div className="max-w-xl text-lg leading-8 text-gray-400">
             <p>
-              A typical bill means searching the catalog, typing quantities and waiting on the total. In a busy hour, those steps stack up.
+              A typical bill means searching the catalog, typing quantities and
+              waiting on the total. In a busy hour, those steps stack up.
             </p>
             <p className="mt-4">
               DukaanAI is a simpler way to make the everyday customer bill.
@@ -141,7 +152,8 @@ export default function DukaanAiPage() {
               Your words. A ready-to-pay bill.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
-              Speak the way you already talk at the counter. DukaanAI turns that into bill items you can check, edit and take to payment.
+              Speak the way you already talk at the counter. DukaanAI turns that
+              into bill items you can check, edit and take to payment.
             </p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-[#121212] p-6 md:p-8">
@@ -153,20 +165,27 @@ export default function DukaanAiPage() {
             </blockquote>
             <ul className="mt-6 border-t border-white/10">
               {exampleItems.map(([name, quantity]) => (
-                <li key={name} className="flex items-baseline justify-between gap-4 border-b border-white/10 py-3">
+                <li
+                  key={name}
+                  className="flex items-baseline justify-between gap-4 border-b border-white/10 py-3"
+                >
                   <span className="font-medium text-white">{name}</span>
                   <span className="text-sm text-gray-400">{quantity}</span>
                 </li>
               ))}
             </ul>
             <p className="mt-4 text-sm leading-6 text-gray-400">
-              A spoken order becomes line items. The merchant can correct them before the bill is made.
+              A spoken order becomes line items. The merchant can correct them
+              before the bill is made.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="features" className="scroll-mt-28 border-y border-white/10 bg-[#121212] px-6 py-20 md:px-10 md:py-28">
+      <section
+        id="features"
+        className="scroll-mt-28 border-y border-white/10 bg-[#121212] px-6 py-20 md:px-10 md:py-28"
+      >
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">
@@ -183,8 +202,12 @@ export default function DukaanAiPage() {
                 className="rounded-2xl border border-white/10 bg-[#0b0b0b] p-6"
               >
                 <span className="text-sm dukaan-kicker">{number}</span>
-                <h3 className="mt-6 text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-gray-400">{description}</p>
+                <h3 className="mt-6 text-lg font-semibold text-white">
+                  {title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-gray-400">
+                  {description}
+                </p>
               </article>
             ))}
           </div>
@@ -205,7 +228,9 @@ export default function DukaanAiPage() {
             {steps.map(([title, description], index) => (
               <li key={title} className="border-t border-white/10 pt-6">
                 <span className="text-sm text-gray-400">0{index + 1}</span>
-                <h3 className="mt-8 text-lg font-semibold text-white">{title}</h3>
+                <h3 className="mt-8 text-lg font-semibold text-white">
+                  {title}
+                </h3>
                 <p className="mt-3 leading-7 text-gray-400">{description}</p>
               </li>
             ))}
@@ -246,10 +271,11 @@ export default function DukaanAiPage() {
             A simpler way to run your counter is coming.
           </h2>
           <p className="mt-4 max-w-xl text-lg leading-8 text-gray-400">
-            We are building DukaanAI so everyday billing is faster for merchants. It is not available to download yet.
+            We are building DukaanAI so everyday billing is faster for
+            merchants. It is not available to download yet.
           </p>
           <div className="mt-8">
-            <EarlyAccessLink />
+            <EarlyAccessForm />
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-gray-400">
             Join the list and we’ll let you know when DukaanAI is ready.

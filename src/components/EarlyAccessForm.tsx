@@ -1,18 +1,27 @@
 "use client";
 
-import { useEffect, useId, useState, type FormEvent, type ReactNode } from "react";
+import {
+  useEffect,
+  useId,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 
-type EarlyAccessLinkProps = {
+type EarlyAccessFormProps = {
   className?: string;
   children?: ReactNode;
 };
 
-export function EarlyAccessLink({
+export function EarlyAccessForm({
   className = "dukaan-solid inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold",
   children = "Join the waitlist",
-}: EarlyAccessLinkProps) {
+}: EarlyAccessFormProps) {
   const [sending, setSending] = useState(false);
-  const [notice, setNotice] = useState<{ kind: "success" | "error"; text: string } | null>(null);
+  const [notice, setNotice] = useState<{
+    kind: "success" | "error";
+    text: string;
+  } | null>(null);
   const emailInputId = useId();
 
   useEffect(() => {
@@ -23,7 +32,6 @@ export function EarlyAccessLink({
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-   
 
     const form = event.currentTarget;
     const formData = new FormData(form);
@@ -32,7 +40,7 @@ export function EarlyAccessLink({
     const website = (formData.get("website") as string) || "";
 
     if (typeof email !== "string" || !email.trim()) return;
-    
+
     setSending(true);
     setNotice(null);
 
@@ -44,7 +52,8 @@ export function EarlyAccessLink({
           formType: "dukaanai-waitlist",
           name: "DukaanAI waitlist",
           email,
-          message: "Please add this email address to the DukaanAI early access waitlist and let me know when it is available.",
+          message:
+            "Please add this email address to the DukaanAI early access waitlist and let me know when it is available.",
           website,
         }),
       });
@@ -54,9 +63,15 @@ export function EarlyAccessLink({
       }
 
       form.reset();
-      setNotice({ kind: "success", text: "You’re on the DukaanAI waitlist. We’ll be in touch." });
+      setNotice({
+        kind: "success",
+        text: "You’re on the DukaanAI waitlist. We’ll be in touch.",
+      });
     } catch {
-      setNotice({ kind: "error", text: "We couldn’t submit your email. Please try again." });
+      setNotice({
+        kind: "error",
+        text: "We couldn’t submit your email. Please try again.",
+      });
     } finally {
       setSending(false);
     }
@@ -64,20 +79,25 @@ export function EarlyAccessLink({
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="grid w-full max-w-md gap-3 sm:flex sm:items-center">
-      <label className="sr-only" htmlFor={emailInputId}>Email address</label>
-      <input
-        id={emailInputId}
-        name="email"
-        type="email"
-        autoComplete="email"
-        required
-        placeholder="Your email address"
-        className="min-h-12 min-w-0 flex-1 rounded-full border border-white/10 bg-[#121212] px-5 text-sm text-white placeholder:text-gray-400 outline-none focus:border-[#146c3a]"
-      />
+      <form
+        onSubmit={handleSubmit}
+        className="grid w-full max-w-md gap-3 sm:flex sm:items-center"
+      >
+        <label className="sr-only" htmlFor={emailInputId}>
+          Email address
+        </label>
+        <input
+          id={emailInputId}
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          placeholder="Your email address"
+          className="min-h-12 min-w-0 flex-1 rounded-full border border-white/10 bg-[#121212] px-5 text-sm text-white placeholder:text-gray-400 outline-none focus:border-[#146c3a]"
+        />
 
-      {/* Honeypot field for bot trapping */}
-      <div className="hidden" aria-hidden="true">
+        {/* Honeypot field for bot trapping */}
+        <div className="hidden" aria-hidden="true">
           <label htmlFor="website">Website</label>
           <input
             id="website"
@@ -88,9 +108,13 @@ export function EarlyAccessLink({
           />
         </div>
 
-      <button type="submit" disabled={sending} className={`${className} disabled:cursor-wait disabled:opacity-70`}>
-        {sending ? "Joining…" : children}
-      </button>
+        <button
+          type="submit"
+          disabled={sending}
+          className={`${className} disabled:cursor-wait disabled:opacity-70`}
+        >
+          {sending ? "Joining…" : children}
+        </button>
       </form>
       {notice && (
         <div
