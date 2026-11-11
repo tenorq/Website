@@ -27,7 +27,11 @@ export function EarlyAccessLink({
     setNotice(null);
 
     const form = event.currentTarget;
-    const email = new FormData(form).get("email");
+    const formData = new FormData(form);
+
+    const email = formData.get("email");
+    const website = (formData.get("website") as string) || "";
+
     if (typeof email !== "string") return;
 
     try {
@@ -39,7 +43,7 @@ export function EarlyAccessLink({
           name: "DukaanAI waitlist",
           email,
           message: "Please add this email address to the DukaanAI early access waitlist and let me know when it is available.",
-          website: "",
+          website,
         }),
       });
       const result = await response.json().catch(() => null);
@@ -69,6 +73,19 @@ export function EarlyAccessLink({
         placeholder="Your email address"
         className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#121212] px-5 text-sm text-white placeholder:text-gray-500 outline-none focus:border-[#146c3a]"
       />
+
+      {/* Honeypot field for bot trapping */}
+      <div className="hidden" aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+          />
+        </div>
+
       <button type="submit" disabled={sending} className={`${className} disabled:cursor-wait disabled:opacity-70`}>
         {sending ? "Joining…" : children}
       </button>
