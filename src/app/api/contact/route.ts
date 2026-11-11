@@ -85,11 +85,14 @@ export async function POST(request: Request) {
 
   try {
     const resend = new Resend(apiKey);
+    const isDukaanWaitlist = data.formType === "dukaanai-waitlist";
     const { data: sent, error } = await resend.emails.send({
       from,
       to: [to],
       replyTo: email,
-      subject: `Website inquiry from ${name}`,
+      subject: isDukaanWaitlist
+        ? "DukaanAI early access request"
+        : `Website inquiry from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 

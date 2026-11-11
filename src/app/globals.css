@@ -101,3 +101,25 @@ body::before {
   border-color: #bdc8d5;
 }
 .theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* DukaanAI product accent. Kept off the remapped blue/white utilities so it survives both themes. */
+.dukaan-kicker { color: #146c3a; }
+html[data-theme="dark"] .dukaan-kicker { color: #3dbe78; }
+.dukaan-mark { border-color: #146c3a; }
+html[data-theme="dark"] .dukaan-mark { border-color: #3dbe78; }
+.dukaan-solid {
+  background-color: #146c3a;
+  color: #ffffff;
+}
+.dukaan-solid:hover { background-color: #0f5a30; }
+.dukaan-solid:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.dukaan-phone-tilt {
+  transform: rotate(-6deg);
+  transform-origin: center center;
+}
+@media (max-width: 767px) {
+  .dukaan-phone-tilt { transform: rotate(-3deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dukaan-phone-tilt { transform: none; }
+}

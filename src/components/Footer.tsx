@@ -28,6 +28,22 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="/products/merchant-platform"
+                  className="hover:text-[#2f5d8c] transition-colors"
+                >
+                  Merchant Platform
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/products/dukaanai"
+                  className="hover:text-[#2f5d8c] transition-colors"
+                >
+                  DukaanAI
+                </a>
+              </li>
+              <li>
+                <a
                   href="/#modernisation"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
