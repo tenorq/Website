@@ -71,7 +71,7 @@ export function EarlyAccessLink({
         autoComplete="email"
         required
         placeholder="Your email address"
-        className="min-h-12 min-w-0 flex-1 rounded-full border border-white/15 bg-[#121212] px-5 text-sm text-white placeholder:text-gray-500 outline-none focus:border-[#146c3a]"
+        className="min-h-12 min-w-0 flex-1 rounded-full border border-white/10 bg-[#121212] px-5 text-sm text-white placeholder:text-gray-400 outline-none focus:border-[#146c3a]"
       />
 
       {/* Honeypot field for bot trapping */}
