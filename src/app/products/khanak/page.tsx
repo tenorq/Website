@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { DukaanPhone } from "@/components/DukaanPhone";
 import { EarlyAccessForm } from "@/components/EarlyAccessForm";
 import { Footer } from "@/components/Footer";
+import { KhanakPhone } from "@/components/KhanakPhone";
 import { Navbar } from "@/components/NavBar";
 
 export const metadata: Metadata = {
-  title: "DukaanAI | Coming soon · Tenorq",
+  title: "Khanak | Coming soon · Tenorq",
   description:
-    "DukaanAI is Tenorq’s voice-first billing app for small retailers. Speak an order, review the items and prepare a ready-to-pay bill. Coming soon.",
+    "Khanak is Tenorq’s voice-first billing app for small retailers. Speak an order, review the items and prepare a ready-to-pay bill. Coming soon.",
   openGraph: {
-    title: "DukaanAI | Coming soon · Tenorq",
+    title: "Khanak | Coming soon · Tenorq",
     description:
       "A voice-first billing app for everyday merchants. Speak an order, review the items and prepare a bill. Coming soon.",
     type: "website",
     images: [
       {
-        url: "/images/products/dukaanai-dashboard.png",
+        url: "/images/products/khanak-home.png",
         width: 1179,
         height: 2556,
-        alt: "DukaanAI home screen",
+        alt: "Khanak home screen",
       },
     ],
   },
@@ -53,7 +53,7 @@ const features = [
 ];
 
 const steps = [
-  ["Speak", "Tell DukaanAI what the customer wants."],
+  ["Speak", "Tell Khanak what the customer wants."],
   ["Review", "Check the extracted products and quantities."],
   ["Generate", "Prepare the final customer bill."],
   ["Collect", "Generate a QR for payment."],
@@ -80,7 +80,7 @@ const exampleItems = [
   ["Maggi", "2 packet"],
 ];
 
-export default function DukaanAiPage() {
+export default function KhanakPage() {
   return (
     <main className="min-h-screen bg-[#0b0b0b]">
       <Navbar />
@@ -92,7 +92,7 @@ export default function DukaanAiPage() {
               A new product by Tenorq
             </p>
             <h1 className="mt-6 max-w-3xl text-[clamp(2.5rem,9vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.045em] text-white md:text-7xl">
-              Meet DukaanAI.
+              Meet Khanak.
             </h1>
             <p className="mt-5 text-2xl font-medium tracking-tight text-white md:text-3xl">
               Billing, just got simpler.
@@ -101,7 +101,7 @@ export default function DukaanAiPage() {
               A voice-first billing experience for everyday merchants. Speak an
               order, review the items and prepare a ready-to-pay bill.
             </p>
-            <p className="mt-6 w-fit rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] dukaan-kicker">
+            <p className="mt-6 w-fit rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] khanak-kicker">
               Coming soon
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -115,7 +115,7 @@ export default function DukaanAiPage() {
             </div>
           </div>
           <div className="flex justify-center py-4 lg:justify-end lg:py-8">
-            <DukaanPhone
+            <KhanakPhone
               priority
               tilt
               sizes="(max-width: 1024px) 250px, 280px"
@@ -136,7 +136,7 @@ export default function DukaanAiPage() {
               waiting on the total. In a busy hour, those steps stack up.
             </p>
             <p className="mt-4">
-              DukaanAI is a simpler way to make the everyday customer bill.
+              Khanak is a simpler way to make the everyday customer bill.
             </p>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function DukaanAiPage() {
               Your words. A ready-to-pay bill.
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
-              Speak the way you already talk at the counter. DukaanAI turns that
+              Speak the way you already talk at the counter. Khanak turns that
               into bill items you can check, edit and take to payment.
             </p>
           </div>
@@ -160,7 +160,7 @@ export default function DukaanAiPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gray-400">
               Example
             </p>
-            <blockquote className="dukaan-mark mt-5 border-l-2 pl-4 text-xl font-medium leading-8 text-white">
+            <blockquote className="khanak-mark mt-5 border-l-2 pl-4 text-xl font-medium leading-8 text-white">
               “Ek kilo atta, 2 packet Maggi.”
             </blockquote>
             <ul className="mt-6 border-t border-white/10">
@@ -201,7 +201,7 @@ export default function DukaanAiPage() {
                 key={number}
                 className="rounded-2xl border border-white/10 bg-[#0b0b0b] p-6"
               >
-                <span className="text-sm dukaan-kicker">{number}</span>
+                <span className="text-sm khanak-kicker">{number}</span>
                 <h3 className="mt-6 text-lg font-semibold text-white">
                   {title}
                 </h3>
@@ -264,21 +264,21 @@ export default function DukaanAiPage() {
 
       <section className="px-6 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-6xl rounded-2xl border border-white/10 bg-[#121212] p-8 md:p-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] dukaan-kicker">
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] khanak-kicker">
             Coming soon
           </p>
           <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-white md:text-4xl">
             A simpler way to run your counter is coming.
           </h2>
           <p className="mt-4 max-w-xl text-lg leading-8 text-gray-400">
-            We are building DukaanAI so everyday billing is faster for
-            merchants. It is not available to download yet.
+            We are building Khanak so everyday billing is faster for merchants.
+            It is not available to download yet.
           </p>
           <div className="mt-8">
             <EarlyAccessForm />
           </div>
           <p className="mt-4 max-w-md text-sm leading-6 text-gray-400">
-            Join the list and we’ll let you know when DukaanAI is ready.
+            Join the list and we’ll let you know when Khanak is ready.
           </p>
         </div>
       </section>

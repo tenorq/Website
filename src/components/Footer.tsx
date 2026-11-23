@@ -36,10 +36,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="/products/dukaanai"
+                  href="/products/khanak"
                   className="hover:text-[#2f5d8c] transition-colors"
                 >
-                  DukaanAI
+                  Khanak
                 </a>
               </li>
               <li>

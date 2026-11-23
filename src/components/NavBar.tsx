@@ -14,7 +14,7 @@ const links = [
 
 const productLinks = [
   { href: "/products/merchant-platform", label: "Merchant Platform", detail: "For banks" },
-  { href: "/products/dukaanai", label: "DukaanAI", detail: "Coming soon" },
+  { href: "/products/khanak", label: "Khanak", detail: "Coming soon" },
 ];
 
 export function Navbar() {
