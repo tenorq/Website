@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { DukaanPhone } from "@/components/DukaanPhone";
+import { KhanakPhone } from "@/components/KhanakPhone";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/NavBar";
 
@@ -18,7 +18,7 @@ export default function ProductsPage() {
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">Products</p>
             <h1 className="mt-6 text-[clamp(2.25rem,9vw,3rem)] font-semibold leading-[1.06] tracking-[-0.045em] text-white md:text-7xl">Software for more connected financial operations.</h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-400">A growing portfolio of technology for institutions and businesses. The merchant platform is for banks. DukaanAI, still in development, is a voice-first billing app for small retailers.</p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-gray-400">A growing portfolio of technology for institutions and businesses. The merchant platform is for banks. Khanak, still in development, is a voice-first billing app for small retailers.</p>
           </div>
 
           <a href="/products/merchant-platform" className="group mt-14 grid overflow-hidden rounded-3xl border border-white/10 bg-[#121212] transition-colors hover:border-blue-500/40 md:grid-cols-[0.85fr_1.15fr]">
@@ -33,15 +33,15 @@ export default function ProductsPage() {
             </div>
           </a>
 
-          <a href="/products/dukaanai" className="group mt-8 grid overflow-hidden rounded-3xl border border-white/10 bg-[#121212] transition-colors hover:border-[#146c3a]/40 md:grid-cols-[1.15fr_0.7fr]">
+          <a href="/products/khanak" className="group mt-8 grid overflow-hidden rounded-3xl border border-white/10 bg-[#121212] transition-colors hover:border-[#146c3a]/40 md:grid-cols-[1.15fr_0.7fr]">
             <div className="flex flex-col items-start justify-center p-8 md:p-12">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">02 · DukaanAI · Coming soon</span>
+              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-400">02 · Khanak · Coming soon</span>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">Your words. A ready-to-pay bill.</h2>
               <p className="mt-5 leading-7 text-gray-400">A voice-first billing app for kirana stores and other small retailers. Speak an order, review the items and prepare a bill. Not available to download yet.</p>
-              <span className="mt-8 text-sm font-semibold text-blue-400">Explore DukaanAI <span aria-hidden="true">→</span></span>
+              <span className="mt-8 text-sm font-semibold text-blue-400">Explore Khanak <span aria-hidden="true">→</span></span>
             </div>
             <div className="flex items-center justify-center px-6 py-10">
-              <DukaanPhone sizes="200px" className="w-full max-w-[200px]" />
+              <KhanakPhone sizes="200px" className="w-full max-w-[200px]" />
             </div>
           </a>
 

@@ -14,7 +14,7 @@ type EarlyAccessFormProps = {
 };
 
 export function EarlyAccessForm({
-  className = "dukaan-solid inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold",
+  className = "khanak-solid inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold",
   children = "Join the waitlist",
 }: EarlyAccessFormProps) {
   const [sending, setSending] = useState(false);
@@ -49,11 +49,11 @@ export function EarlyAccessForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          formType: "dukaanai-waitlist",
-          name: "DukaanAI waitlist",
+          formType: "khanak-waitlist",
+          name: "Khanak waitlist",
           email,
           message:
-            "Please add this email address to the DukaanAI early access waitlist and let me know when it is available.",
+            "Please add this email address to the Khanak early access waitlist and let me know when it is available.",
           website,
         }),
       });
@@ -65,7 +65,7 @@ export function EarlyAccessForm({
       form.reset();
       setNotice({
         kind: "success",
-        text: "You’re on the DukaanAI waitlist. We’ll be in touch.",
+        text: "You’re on the Khanak waitlist. We’ll be in touch.",
       });
     } catch {
       setNotice({

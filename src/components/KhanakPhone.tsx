@@ -1,24 +1,24 @@
 import Image from "next/image";
 
-type DukaanPhoneProps = {
+type KhanakPhoneProps = {
   priority?: boolean;
   tilt?: boolean;
   className?: string;
   sizes: string;
 };
 
-export function DukaanPhone({
+export function KhanakPhone({
   priority = false,
   tilt = false,
   className = "",
   sizes,
-}: DukaanPhoneProps) {
+}: KhanakPhoneProps) {
   return (
-    <figure className={`${tilt ? "dukaan-phone-tilt" : ""} ${className}`}>
+    <figure className={`${tilt ? "khanak-phone-tilt" : ""} ${className}`}>
       <div className="overflow-hidden rounded-[1.65rem] border-[7px] border-[#1a1f27] bg-white shadow-[0_24px_50px_-24px_rgba(17,24,32,0.45)] ring-1 ring-black/10">
         <Image
-          src="/images/products/dukaanai-dashboard.png"
-          alt="DukaanAI home screen with voice billing. The app asks the merchant to record an order by speaking."
+          src="/images/products/khanak-home.png"
+          alt="Khanak home screen with voice billing. The app asks the merchant to record an order by speaking."
           width={1179}
           height={2556}
           priority={priority}
